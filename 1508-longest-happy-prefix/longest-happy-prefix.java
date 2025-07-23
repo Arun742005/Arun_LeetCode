@@ -15,3 +15,31 @@ class Solution {
         return s.substring(0,lps[n-1]);
     }
 }
+
+// class Solution {
+//     public String longestPrefix(String s) {
+//         int n=s.length();
+//         int i=1;
+//         int len=0;
+//         int lsp[]=new int[n];
+//         while(i<n){
+//             if(s.charAt(i)==s.charAt(len)){
+//                 len++;
+//                 lsp[i]=len;
+//                 i++;
+//             }
+//             else{
+//                 if(len!=0){
+//                     len=lsp[len-1];
+//                 }
+//                 else{
+//                     lsp[i]=0;
+//                     i++;
+//                 }
+                
+//             }
+//         }
+//          int prefixLength = lsp[n - 1];
+//         return s.substring(0, prefixLength);
+//     }
+// }
