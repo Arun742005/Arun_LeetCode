@@ -27,22 +27,23 @@ class Solution {
         if(root == null) return null;
 
         Node curr = root;
-        while(curr != null){
+        while(curr!= null){
             Node dummy = new Node(0);
             Node tail = dummy;
 
-            while(curr != null){
-                if(curr.left!=null){
+            while(curr!= null){
+
+                if(curr.left != null){
                     tail.next = curr.left;
                     tail = tail.next;
                 }
-                if(curr.right!=null){
+                if(curr.right != null){
                     tail.next = curr.right;
                     tail = tail.next;
                 }
                 curr = curr.next;
             }
-            curr  = dummy.next;
+            curr = dummy.next;
         }
         return root;
     }
