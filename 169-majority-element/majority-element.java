@@ -5,12 +5,12 @@ class Solution {
             if(count == 0){
                 canditate = num;
             }
-            if(num == canditate)
+            if(num == canditate){
                 count++;
-            else
+            }else{
                 count--;
+            }
         }
         return canditate;
-        
     }
 }
