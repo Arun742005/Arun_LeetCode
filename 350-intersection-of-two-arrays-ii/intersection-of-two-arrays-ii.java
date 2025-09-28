@@ -14,7 +14,7 @@ class Solution {
         for (int num : nums2) {
             if (map.containsKey(num) && map.get(num) > 0) {
                 result.add(num);
-                map.put(num, map.get(num) - 1); // reduce count
+                map.put(num, map.get(num) - 1);
             }
         }
 
