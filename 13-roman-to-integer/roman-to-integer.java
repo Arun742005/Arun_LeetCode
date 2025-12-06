@@ -11,15 +11,27 @@ class Solution {
         map.put('M',1000);
         int result=0;
 
-        for(int i=0; i<s.length();i++){
+        for(int i=0; i<s.length(); i++){
             int current = map.get(s.charAt(i));
-
             if(i+1 < s.length() && current < map.get(s.charAt(i+1))){
-                result  -=current;
-            }else{
+                result-= current;
+            }
+            else{
                 result+= current;
             }
         }
         return result;
     }
 }
+
+
+// for(int i=0; i<s.length();i++){
+//             int current = map.get(s.charAt(i));
+
+//             if(i+1 < s.length() && current < map.get(s.charAt(i+1))){
+//                 result  -=current;
+//             }else{
+//                 result+= current;
+//             }
+//         }
+//         return result;
