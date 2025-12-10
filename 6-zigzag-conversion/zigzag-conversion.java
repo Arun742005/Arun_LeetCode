@@ -2,25 +2,25 @@ class Solution {
     public String convert(String s, int numRows) {
         if(numRows == 1 || s.length() <= numRows) return s;
 
-        List<StringBuilder> rows = new ArrayList<>();
-        for( int i=0;i< Math.min(numRows , s.length()); i++)
-            rows.add(new StringBuilder());
+        StringBuilder[] rows = new StringBuilder[numRows];
+        for(int i=0; i<numRows; i++){
+            rows[i] = new StringBuilder();
+        }
+        int row = 0;
+        boolean goingDown = true;
 
-        int currentRows = 0;
-        boolean goingDown = false;
+        for (char c : s.toCharArray()) {
+            rows[row].append(c);
 
-        for(char c : s.toCharArray()){
-            rows.get(currentRows).append(c);
+            if (row == 0) goingDown = true;
+            else if (row == numRows - 1) goingDown = false;
 
-            if(currentRows == 0 || currentRows == numRows-1)
-                goingDown = !goingDown;
-
-            currentRows += goingDown? 1:-1;
+            row += goingDown ? 1 : -1;
         }
 
         StringBuilder result = new StringBuilder();
-        for(StringBuilder row : rows){
-            result.append(row);
+        for(StringBuilder sb : rows){
+            result.append(sb);
         }
         
         return result.toString();
